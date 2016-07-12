@@ -1191,10 +1191,8 @@ def hash(*cols):
 @since(2.0)
 def aes_encrypt(input, key):
     """
-    Encrypts input of given column using AES. Key lengths of 128, 192 or 256 bits can be used. 192
-    and 256 bits keys can be used if Java Cryptography Extension (JCE) Unlimited Strength Jurisdic-
-    tion Policy Files are installed. If input is invalid, key length is not one of the permitted
-    values or using 192/256 bits key before installing JCE, an exception will be thrown.
+    Encrypts input of given column using AES. Key lengths of 128 bits can be used. If input is
+    invalid, key length is not one of the permittedvalues, an exception will be thrown.
 
     >>> df = sqlContext.createDataFrame([('ABC','1234567890123456')], ['input','key'])
     >>> df.select(base64(aes_encrypt(df.input, df.key)).alias('aes')).collect()
@@ -1209,10 +1207,8 @@ def aes_encrypt(input, key):
 @since(2.0)
 def aes_decrypt(input, key):
     """
-    Decrypts input of given column using AES. Key lengths of 128, 192 or 256 bits can be used. 192
-    and 256 bits keys can be used if Java Cryptography Extension (JCE) Unlimited Strength Jurisdic-
-    tion Policy Files are installed. If input is invalid, key length is not one of the permitted
-    values or using 192/256 bits key before installing JCE, an exception will be thrown.
+    Decrypts input of given column using AES. Key lengths of 128 bits can be used. If input is
+    invalid, key length is not one of the permittedvalues, an exception will be thrown.
 
     >>> df = sqlContext.createDataFrame([(u'y6Ss+zCYObpCbgfWfyNWTw==','1234567890123456')], \
     ['input','key'])
